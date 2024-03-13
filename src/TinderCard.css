@@ -1,0 +1,72 @@
+.card {
+  position: relative;
+  width: 600px;
+  max-width: 85vw;
+  height: 50vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+}
+.desc {
+  width: 600px;
+  max-width: 85vw;
+  height: 20vh;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0px 18px 53px 0px rgba(0, 0, 0.1, 0.4);
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+}
+
+.status {
+  color: green;
+}
+
+.desc > h3 {
+  color: black;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  padding: 5px;
+}
+
+.desc > h4 {
+  padding: 5px;
+  margin-top: 1.3vh;
+  margin-left: 10px;
+  color: black;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.tinderCards__cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.swipe {
+  position: absolute;
+}
+
+.hobby {
+  font-size: 1rem;
+  padding: 15px;
+  font-weight: 500;
+  width: 20%;
+  text-align: center;
+  background-color: black;
+  opacity: 0.3;
+  color: white;
+  border-radius: 10px;
+}
+
+.hobby__Container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
