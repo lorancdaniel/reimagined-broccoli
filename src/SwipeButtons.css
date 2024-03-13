@@ -1,6 +1,6 @@
 .swipeButtons {
   position: fixed;
-  bottom: 10vh;
+  bottom: 5vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -37,12 +37,16 @@
 }
 
 /* Media query for screens wider than 1024px */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .swipeButtons__repeat,
   .swipeButtons__left,
   .swipeButtons__star,
   .swipeButtons__right,
   .swipeButtons__lightning {
     padding: 2.5vh !important;
+  }
+  .swipeButtons {
+    bottom:5vh;
+    width: 47%;
   }
 }

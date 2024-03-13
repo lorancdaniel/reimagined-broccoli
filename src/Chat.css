@@ -6,7 +6,7 @@
   height: 90px;
   border-bottom: 1px solid #fafafa;
   cursor: pointer;
-  width: 95vw;
+  width: auto;
 }
 
 a {
@@ -23,7 +23,10 @@ a {
 }
 
 .chat__timestamp {
-  color: lightgray;
+  color: gray;
+  position: absolute;
+  right: 1rem;
+  font-size: 0.7rem;
 }
 
 .chat__image {

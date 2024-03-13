@@ -45,8 +45,10 @@ function TinderCards() {
               ></div>
               <div className="desc">
                 <h4>
-                  {person.name}, {person.age},{" "}
-                  <span className="status"> • {person.status}</span>
+                  {person.name}, {person.age} {" "}
+                  <span className={`status ${person.status === 'Online' ? 'online' : ''}`}>
+  • {person.status}
+</span>
                 </h4>
                 <h3>{person.desc}</h3>
                 <div className="hobby__Container">
