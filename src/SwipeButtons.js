@@ -8,7 +8,7 @@ import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { IconButton } from "@material-ui/core";
 import { Message } from "@material-ui/icons";
 
-function SwipeButtons() {
+function SwipeButtons(user) {
   return (
     <div className="swipeButtons">
       <IconButton className="swipeButtons__left">
@@ -19,7 +19,7 @@ function SwipeButtons() {
         <FavoriteIcon fontSize="large" />
       </IconButton>
 
-      <IconButton className="swipeButtons__lightning">
+      <IconButton onClick={test} className="swipeButtons__lightning">
         <Message fontSize="large" />
       </IconButton>
     </div>
