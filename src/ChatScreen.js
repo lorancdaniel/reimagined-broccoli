@@ -2,24 +2,27 @@ import React from 'react';
 import './ChatScreen.css';
 import { useState } from 'react';
 import { Avatar } from '@material-ui/core';
+import { useParams} from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
 
 function ChatScreen() {
+    const location = useLocation();
+    const userState = location.state?.user;
+    console.log(userState);
+
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([
         {
-            name: "Rini",
-            image: "https://expertphotography.com/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg",
-            message: "What's up",
+            name: `${userState?.name}`,
+            image: `${userState?.url}`,
+            message: "Co słychać?",
         },
         {
-            name: "Rini",
-            image: "https://expertphotography.com/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg",
-            message: "How r u?",
+            name: `${userState?.name}`,
+            image: `${userState?.url}`,
+            message: "Co słychać?",
         },
-        {
-            
-            message: "How it's going",
-        }
     ]);
 
     const handleSend = e => {
@@ -29,9 +32,17 @@ function ChatScreen() {
         setInput("");
     }
 
+    function getDate() {
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${month}/${date}/${year}`;
+      }
+
     return (
         <div className = "chatScreen">
-            <p className = "chatScreen__timestamp">YOU MATCHED WITH RINI ON 10/09/20</p>
+            <p className="chatScreen__timestamp">POŁĄCZONO Z UŻYTKOWNIKIEM {(userState?.name).toUpperCase()} W DNIU {getDate().toUpperCase()}</p>
             {messages.map((message) => (
                 message.name ? (
                     <div className = "chatScreen__message">
@@ -54,9 +65,9 @@ function ChatScreen() {
                     value = {input}
                     onChange = {(e) => setInput(e.target.value)}
                     className = "chatScreen__inputField" 
-                    placeholder = "Type a message" 
+                    placeholder = "Napisz wiadomość" 
                     type = "text" />
-                <button onClick = {handleSend} type = "submit" className = "chatScreen__inputButton">SEND</button>
+                <button onClick = {handleSend} type = "submit" className = "chatScreen__inputButton">Wyślij</button>
             </form>
             
         </div>

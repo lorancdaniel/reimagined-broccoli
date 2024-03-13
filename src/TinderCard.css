@@ -70,3 +70,11 @@
   width: 100%;
   justify-content: space-around;
 }
+
+.swipe {
+  transition: opacity 0.4s ease-out;
+}
+
+.removing {
+  opacity: 0;
+}

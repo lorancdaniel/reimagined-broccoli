@@ -25,7 +25,7 @@ function Header({ backButton }) {
             <Link to = "/">
                 <img 
                     className = "header__logo"
-                    src = "https://p.kindpng.com/picc/s/19-195266_tinder-icon-2017-logo-vector-gradient-tinder-logo.png" 
+                    src = "/love-svgrepo-com.svg" 
                     alt = "tinder logo" 
                 />
             </Link>
