@@ -31,7 +31,7 @@
 
 .modal-content {
   position: absolute;
-  top:15%;
+  top: 15%;
   height: 30vh;
   background-color: #fefefe;
   word-wrap: break-word;
@@ -59,10 +59,22 @@
   cursor: pointer;
 }
 
-
 @media screen and (min-width: 1024px) {
   .modal-content {
     margin: auto;
     max-width: 720px;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .modal-content {
+    margin: auto;
+    max-width: 350px;
+  }
+  .modal-content > p {
+    font-size: 1.2rem;
+  }
+  .more-users-btn2 {
+    max-width: 85%;
   }
 }
