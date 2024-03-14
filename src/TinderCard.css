@@ -85,7 +85,7 @@
 }
 
 .swipe {
-  transition: opacity 0.4s ease-out;
+  transition: opacity 0.7s ease-out;
 }
 
 .removing {
@@ -121,5 +121,41 @@
   }
   .hobby {
     font-size: 0.6rem;
+  }
+}
+
+/* TinderCardAnimation.css */
+
+.card-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slide-in 0.5s forwards;
+}
+
+.card-exit {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }

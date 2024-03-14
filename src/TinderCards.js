@@ -17,17 +17,29 @@ function TinderCards() {
 
       // Extract the user's name from the pathname
       const pathSegments = location.pathname.split("/");
-      const userName = pathSegments.length > 1 ? pathSegments[1] : null;
+      const userName =
+        pathSegments.length > 1 ? pathSegments[1].toLowerCase() : null;
 
       // If userName exists in the URL, sort the array to have this person first
       if (userName) {
-        console.log(userName);
         sortedPeople = sortedPeople.sort((a, b) => {
-          if (a.name.toLowerCase() === userName) return 1;
-          if (b.name.toLowerCase() === userName) return -1;
+          const aName = a.name.toLowerCase();
+          const bName = b.name.toLowerCase();
+
+          if (aName === userName) return -1;
+          if (bName === userName) return 1;
           return 0;
         });
+
+        // Find the index of the user in the sorted array
+        const userIndex = sortedPeople.findIndex(
+          (person) => person.name.toLowerCase() === userName
+        );
+
+        // Set the currentIndex to the user's index
+        setCurrentIndex(userIndex);
       }
+
       console.log(sortedPeople);
       setPeople(sortedPeople);
     });
@@ -38,15 +50,12 @@ function TinderCards() {
   }, [location.pathname]);
 
   const swipe = (direction, personName) => {
-    setRemovingName(personName);
+    setRemovingName(personName); // Mark the card for removal
+
+    // Delay before rendering the next card
     setTimeout(() => {
-      setRemovingName("");
-      if (direction === "right") {
-        setCurrentIndex((currentIndex + 1) % people.length);
-      } else if (direction === "left") {
-        setCurrentIndex((currentIndex + people.length - 1) % people.length);
-      }
-    }, 400);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }, 300); // Delay of 1 second (1000 milliseconds)
   };
 
   const currentPerson = people[currentIndex];
