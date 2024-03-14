@@ -24,7 +24,6 @@ function SwipeButtons({ user, onSwipe }) {
   }
 
   const child = user;
-  console.log(child);
 
   return (
     <div className="swipeButtons">

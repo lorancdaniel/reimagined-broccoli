@@ -10,36 +10,38 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Route render={({ location }) => (
-          <TransitionGroup>
-            <CSSTransition
-              key={location.key}
-              timeout={300} // Duration of the transition
-              classNames="fade" // Prefix for the transition classNames
-            >
-              <Switch location={location}>
-                <Route path="/chat/:person">
-                  <div className="route-section">
-                    <Header backButton="/chat" />
-                    <ChatScreen />
-                  </div>
-                </Route>
-                <Route path="/chat">
-                  <div className="route-section">
-                    <Header backButton="/" />
-                    <Chats />
-                  </div>
-                </Route>
-                <Route path="/">
-                  <div className="route-section">
-                    <Header />
-                    <TinderCards />
-                  </div>
-                </Route>
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        )} />
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={300} // Duration of the transition
+                classNames="fade" // Prefix for the transition classNames
+              >
+                <Switch location={location}>
+                  <Route path="/chat/:person">
+                    <div className="route-section">
+                      <Header backButton="/chat" />
+                      <ChatScreen />
+                    </div>
+                  </Route>
+                  <Route path="/chat">
+                    <div className="route-section">
+                      <Header backButton="/" />
+                      <Chats />
+                    </div>
+                  </Route>
+                  <Route path="/">
+                    <div className="route-section">
+                      <Header />
+                      <TinderCards />
+                    </div>
+                  </Route>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </Router>
     </div>
   );
