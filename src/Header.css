@@ -67,6 +67,9 @@
 }
 
 @media screen and (max-height: 750px) {
+  .modal {
+    width: 95%;
+  }
   .modal-content {
     margin: auto;
     max-width: 350px;
