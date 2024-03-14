@@ -7,9 +7,9 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { IconButton } from "@material-ui/core";
 import { Message } from "@material-ui/icons";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-function SwipeButtons({user, onSwipe}) {
+function SwipeButtons({ user, onSwipe }) {
   // State to control the visibility of the SwipeButtons component
   const [isVisible, setIsVisible] = useState(true);
 
@@ -24,26 +24,36 @@ function SwipeButtons({user, onSwipe}) {
   }
 
   const child = user;
-  console.log(child)
+  console.log(child);
 
   return (
     <div className="swipeButtons">
-      <IconButton className="swipeButtons__left" onClick={() => {
-        handleButtonClick();
-        onSwipe('left');
-      }}>
+      <IconButton
+        className="swipeButtons__left"
+        onClick={() => {
+          handleButtonClick();
+          onSwipe("left");
+        }}
+      >
         <CloseIcon fontSize="large" />
       </IconButton>
 
-      <IconButton className="swipeButtons__right" onClick={() => {
-        handleButtonClick();
-        onSwipe('right');
-      }}>
+      <IconButton
+        className="swipeButtons__right"
+        onClick={() => {
+          handleButtonClick();
+          onSwipe("right");
+        }}
+      >
         <FavoriteIcon fontSize="large" />
       </IconButton>
 
-      <IconButton component={Link} to={{pathname:`/chat/${user.name}`, state: {user: child}
-    }} className="swipeButtons__lightning" onClick={handleButtonClick}>
+      <IconButton
+        component={Link}
+        to={{ pathname: `/chat/${user.name}`, state: { user: child } }}
+        className="swipeButtons__lightning"
+        onClick={handleButtonClick}
+      >
         <Message fontSize="large" />
       </IconButton>
     </div>
